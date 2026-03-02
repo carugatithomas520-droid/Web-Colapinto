@@ -1,16 +1,164 @@
-<h2>Bienvenido</h2>
+<style>
+    .home-container {
+        text-align: center;
+        padding: 20px;
+        color: white;
+    }
 
-<p>
-  Este sitio está dedicado al piloto argentino <strong>Franco Colapinto</strong>,
-  y fue desarrollado como proyecto final del curso.
-</p>
+    /* Banner Principal - Estilo Alpine */
+    .hero-banner {
+        background-color: #002e6e; /* Azul Alpine */
+        background-image: linear-gradient(135deg, #002e6e 0%, #001026 100%);
+        padding: 50px 20px;
+        border-radius: 15px;
+        border: 2px solid #ff0055; /* Rosa Alpine */
+        margin-bottom: 40px;
+        box-shadow: 0 10px 25px rgba(255, 0, 85, 0.2);
+    }
 
-<p>
-  La aplicación permite consultar información general del piloto
-  y administrar sus resultados por temporada mediante un sistema CRUD.
-</p>
+    .hero-banner h1 {
+        font-size: 3.8em;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: white;
+    }
 
-<p>
-  El desarrollo se realizó utilizando Node.js, Express, Handlebars
-  y una base de datos.
-</p>
+    .hero-banner h2 {
+        font-size: 1.8em;
+        margin: 10px 0;
+        color: #ff0055; /* Rosa */
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .info-section {
+        background: #002e6e;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        text-align: left;
+        border-left: 5px solid #ff0055;
+    }
+
+    .info-section h3 {
+        color: white;
+        margin-top: 0;
+        font-size: 1.8em;
+    }
+
+    .info-section p {
+        line-height: 1.8;
+        font-size: 1.1em;
+        color: #e0e0e0;
+    }
+
+    /* Tarjetas de Navegación */
+    .sections-nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .section-card {
+        background: #002e6e;
+        border: 2px solid #0056b3;
+        padding: 25px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: white;
+        flex: 1;
+        min-width: 280px;
+        max-width: 350px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        background-color: #003d91;
+    }
+
+    .card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+    }
+
+    .section-card h3 {
+        color: #ff0055;
+        margin: 10px 0;
+        font-size: 1.5em;
+    }
+
+    .section-card p {
+        color: #ddd;
+        font-size: 1em;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .btn-card {
+        background-color: #ff0055;
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .btn-card:hover {
+        background-color: #cc0044;
+    }
+</style>
+
+<div class="home-container">
+    
+    <div class="hero-banner">
+        <h1>Franco Colapinto</h1>
+        <h2>Piloto de Fórmula 1 - Alpine Team</h2>
+        <p>El futuro del automovilismo argentino.</p>
+    </div>
+
+    <div class="info-section">
+        <h3>¿Quién es Franco Colapinto?</h3>
+        <p>
+            Nacido en Pilar, Buenos Aires, Franco Colapinto es una de las máximas promesas del automovilismo argentino a nivel mundial. 
+            Con una trayectoria meteórica pasando por la Fórmula 4 española, Fórmula Renault Eurocup y FIA Fórmula 3, ha demostrado una 
+            habilidad excepcional para adaptarse rápidamente a nuevas categorías y circuitos.
+        </p>
+        <p>
+            Su estilo de manejo agresivo pero inteligente le ha permitido conseguir victorias clave y mantenerse siempre en la lucha por el podio. 
+            Actualmente, Franco forma parte de la prestigiosa academia de jóvenes pilotos y compite para el <strong>Alpine F1 Team</strong>, 
+            con el objetivo claro de consolidarse en la cima del automovilismo.
+        </p>
+    </div>
+
+    <div class="sections-nav">
+        <a href="/pilotos" class="section-card">
+            <div class="card-icon">🏎️</div>
+            <h3>El Piloto</h3>
+            <p>Perfil detallado, estadísticas y gestión técnica.</p>
+            <span class="btn-card">Ver Perfil</span>
+        </a>
+        
+        <a href="/resultados" class="section-card">
+            <div class="card-icon">🏁</div>
+            <h3>Resultados</h3>
+            <p>Posiciones, tiempos y puntos de la temporada.</p>
+            <span class="btn-card">Ver Resultados</span>
+        </a>
+        
+        <a href="/contacto" class="section-card">
+            <div class="card-icon">📩</div>
+            <h3>Contacto</h3>
+            <p>Enviá tu mensaje de apoyo al sitio.</p>
+            <span class="btn-card">Contactar</span>
+        </a>
+    </div>
+</div>

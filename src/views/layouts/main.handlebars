@@ -1,101 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>F1 – Franco Colapinto</title>
-
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #c00;
-      color: white;
-      padding: 20px;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: white;
-      margin-right: 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 30px;
-      background: white;
-      min-height: 80vh;
-    }
-
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 10px;
-    }
-
-    input, textarea, button {
-      display: block;
-      margin: 10px 0;
-      padding: 8px;
-      width: 300px;
-      max-width: 100%;
-    }
-
-    button {
-      background: #c00;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #900;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Franco Colapinto | Alpine F1 Team</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #001026; /* Fondo azul muy oscuro de Alpine */
+            color: #ffffff; 
+        }
+        
+        header { 
+            background-color: #002e6e; /* Azul Alpine */
+            color: white; 
+            padding: 30px 20px; 
+            border-bottom: 5px solid #ff0055; /* Rosa Alpine */
+            text-align: center;
+        }
+        
+        header h1 { 
+            margin: 0; 
+            font-size: 3.5em; 
+            text-transform: uppercase; 
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+        
+        nav { margin-top: 20px; }
+        
+        nav a { 
+            color: white; 
+            margin: 0 15px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover { 
+            color: #ff0055; /* Rosa al pasar el mouse */
+            border-bottom: 2px solid #ff0055;
+        }
+        
+        main { 
+            background: #00193d; /* Azul ligeramente más claro para el contenido */
+            padding: 40px; 
+            min-height: 80vh; 
+            max-width: 1200px; 
+            margin: 20px auto; 
+            border-radius: 10px;
+            border: 1px solid #0056b3;
+        }
+        
+        footer { 
+            background: #000; 
+            color: #aaa; 
+            text-align: center; 
+            padding: 20px; 
+            font-size: 0.9em;
+            border-top: 1px solid #ff0055;
+        }
+    </style>
 </head>
 <body>
-
-<header>
-  <h1>🏁 Perfil de Piloto F1</h1>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/pilotos">Resultados</a>
-    <a href="/contacto">Contacto</a>
-  </nav>
-</header>
-
-<main>
-  {{{body}}}
-</main>
-
-<footer>
-  Proyecto curso Node.js – Handlebars – Base de Datos
-</footer>
-
+    <header>
+        <h1>🏁 Franco Colapinto</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/pilotos">El piloto</a>
+            <a href="/resultados">Resultados</a>
+            <a href="/contacto">Contacto</a>
+        </nav>
+    </header>
+    
+    <main>
+        {{{body}}}
+    </main>
+    
+    <footer>
+        © 2026 - Fan Site no oficial - Alpine F1 Team
+    </footer>
 </body>
 </html>
