@@ -138,3 +138,40 @@
         <p style="color: #ccc; font-size: 0.9em; margin-bottom: 0;">*Horarios sujetos a cambios por la FIA.</p>
     </div>
 </div>
+<hr style="margin: 60px 0; border-color: #ff0055;">
+
+<section style="color: white;">
+  <h2 style="color:#ff0055;">🛠️ Gestión de Pilotos (CRUD)</h2>
+
+  <!-- FORM AGREGAR -->
+  <form action="/pilotos/agregar" method="POST" style="margin-bottom: 30px;">
+    <input type="text" name="nombre" placeholder="Nombre del piloto" required>
+    <input type="text" name="equipo" placeholder="Equipo" required>
+    <button type="submit">➕ Agregar piloto</button>
+  </form>
+
+  <!-- LISTADO -->
+  <table border="1" cellpadding="10" style="color:white; border-color:#ff0055;">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Equipo</th>
+      <th>Acciones</th>
+    </tr>
+
+    {{#each pilotos}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.nombre}}</td>
+      <td>{{this.equipo}}</td>
+      <td>
+        <a href="/pilotos/editar/{{this.id}}">✏️ Editar</a>
+
+        <form action="/pilotos/eliminar/{{this.id}}" method="POST" style="display:inline;">
+          <button type="submit">🗑️ Eliminar</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</section>
