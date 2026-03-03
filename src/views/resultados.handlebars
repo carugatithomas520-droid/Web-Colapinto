@@ -1,27 +1,57 @@
-<h1>🏆 Resultados de Franco Colapinto</h1>
-<p>Aquí se muestran las últimas posiciones del piloto en la Fórmula 1.</p>
+<h1>🏁 Resultados de Franco Colapinto</h1>
 
-<table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-    <thead>
-        <tr style="background-color: #001a3f; color: white;">
-            <th>Gran Premio</th>
-            <th>Posición</th>
-            <th>Puntos</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>GP de Italia (Monza)</td>
-            <td>12°</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>GP de Azerbaiyán (Bakú)</td>
-            <td>8°</td>
-            <td>4</td>
-        </tr>
-    </tbody>
+<p>
+  En esta sección se administran los resultados por carrera del piloto.
+  Los datos se almacenan en una base de datos y pueden ser agregados,
+  editados o eliminados.
+</p>
+
+<hr>
+
+<h2>➕ Agregar nuevo resultado</h2>
+
+<form action="/resultados/agregar" method="POST">
+  <input type="text" name="gran_premio" placeholder="Gran Premio" required>
+  <input type="text" name="circuito" placeholder="Circuito" required>
+  <input type="number" name="posicion" placeholder="Posición final" required>
+  <input type="number" name="puntos" placeholder="Puntos obtenidos" required>
+  <input type="number" name="temporada" placeholder="Temporada (año)" required>
+
+  <button type="submit">Agregar resultado</button>
+</form>
+
+<hr>
+
+<h2>📊 Resultados cargados</h2>
+
+{{#if resultados.length}}
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Gran Premio</th>
+    <th>Circuito</th>
+    <th>Posición</th>
+    <th>Puntos</th>
+    <th>Temporada</th>
+    <th>Acciones</th>
+  </tr>
+
+  {{#each resultados}}
+  <tr>
+    <td>{{this.gran_premio}}</td>
+    <td>{{this.circuito}}</td>
+    <td>{{this.posicion}}</td>
+    <td>{{this.puntos}}</td>
+    <td>{{this.temporada}}</td>
+    <td>
+      <a href="/resultados/editar/{{this.id}}">✏️ Editar</a>
+
+      <form action="/resultados/eliminar/{{this.id}}" method="POST" style="display:inline;">
+        <button type="submit">🗑️ Eliminar</button>
+      </form>
+    </td>
+  </tr>
+  {{/each}}
 </table>
-
-<br>
-<a href="/">⬅ Volver al inicio</a>
+{{else}}
+<p>No hay resultados cargados.</p>
+{{/if}}

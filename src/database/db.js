@@ -22,3 +22,15 @@ db.serialize(() => {
 });
 
 module.exports = db;
+
+// TABLA RESULTADOS
+db.run(`
+  CREATE TABLE IF NOT EXISTS resultados (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    gran_premio TEXT NOT NULL,
+    circuito TEXT NOT NULL,
+    posicion INTEGER NOT NULL,
+    puntos INTEGER NOT NULL,
+    temporada INTEGER NOT NULL
+  )
+`);
