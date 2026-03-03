@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../database/db');
 
-// LISTAR pilotos
+
 router.get('/', (req, res) => {
   db.all('SELECT * FROM pilotos', (err, rows) => {
     if (err) {
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// AGREGAR piloto
+
 router.post('/agregar', (req, res) => {
   const { nombre, equipo } = req.body;
 
@@ -25,7 +25,7 @@ router.post('/agregar', (req, res) => {
   );
 });
 
-// FORM editar
+
 router.get('/editar/:id', (req, res) => {
   const { id } = req.params;
 
@@ -38,7 +38,7 @@ router.get('/editar/:id', (req, res) => {
   );
 });
 
-// GUARDAR edición
+
 router.post('/editar/:id', (req, res) => {
   const { id } = req.params;
   const { nombre, equipo } = req.body;
@@ -52,7 +52,7 @@ router.post('/editar/:id', (req, res) => {
   );
 });
 
-// ELIMINAR
+
 router.post('/eliminar/:id', (req, res) => {
   const { id } = req.params;
 

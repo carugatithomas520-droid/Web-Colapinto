@@ -7,7 +7,7 @@ const db = new sqlite3.Database(dbName, (err) => {
     console.log('Conectado a la base de datos SQLite.');
 });
 
-// Crear tabla y un registro inicial
+
 db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS pilotos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,7 +23,7 @@ db.serialize(() => {
 
 module.exports = db;
 
-// TABLA RESULTADOS
+
 db.run(`
   CREATE TABLE IF NOT EXISTS resultados (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

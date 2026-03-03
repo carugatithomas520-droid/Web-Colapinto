@@ -1,13 +1,13 @@
 const db = require('../database/db');
 
-// LISTAR
+
 exports.listar = (req, res) => {
   db.all('SELECT * FROM pilotos', (err, rows) => {
     res.render('pilotos', { pilotos: rows });
   });
 };
 
-// CREAR
+
 exports.crear = (req, res) => {
   const { nombre, equipo } = req.body;
 
@@ -18,7 +18,7 @@ exports.crear = (req, res) => {
   );
 };
 
-// FORMULARIO EDITAR
+
 exports.editarForm = (req, res) => {
   const { id } = req.params;
 
@@ -31,7 +31,7 @@ exports.editarForm = (req, res) => {
   );
 };
 
-// GUARDAR EDICIÓN
+
 exports.editarGuardar = (req, res) => {
   const { id } = req.params;
   const { nombre, equipo } = req.body;
@@ -43,7 +43,7 @@ exports.editarGuardar = (req, res) => {
   );
 };
 
-// ELIMINAR
+
 exports.eliminar = (req, res) => {
   db.run(
     'DELETE FROM pilotos WHERE id = ?',

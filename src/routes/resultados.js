@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../database/db');
 
-// LISTAR resultados
+
 router.get('/', (req, res) => {
   db.all(
     'SELECT * FROM resultados ORDER BY temporada DESC',
@@ -30,7 +30,7 @@ router.post('/agregar', (req, res) => {
   );
 });
 
-// FORM editar
+
 router.get('/editar/:id', (req, res) => {
   db.get(
     'SELECT * FROM resultados WHERE id = ?',
@@ -41,7 +41,7 @@ router.get('/editar/:id', (req, res) => {
   );
 });
 
-// GUARDAR edición
+
 router.post('/editar/:id', (req, res) => {
   const { gran_premio, circuito, posicion, puntos, temporada } = req.body;
 
