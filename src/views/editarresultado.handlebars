@@ -1,0 +1,44 @@
+<h1>✏️ Editar resultado</h1>
+
+<form method="POST" action="/resultados/editar/{{resultado.id}}">
+  <input
+    type="text"
+    name="gran_premio"
+    value="{{resultado.gran_premio}}"
+    required
+  >
+
+  <input
+    type="text"
+    name="circuito"
+    value="{{resultado.circuito}}"
+    required
+  >
+
+  <input
+    type="number"
+    name="posicion"
+    value="{{resultado.posicion}}"
+    required
+  >
+
+  <input
+    type="number"
+    name="puntos"
+    value="{{resultado.puntos}}"
+    required
+  >
+
+  <input
+    type="number"
+    name="temporada"
+    value="{{resultado.temporada}}"
+    required
+  >
+
+  <button type="submit">Guardar cambios</button>
+</form>
+
+<br>
+
+<a href="/resultados">⬅ Volver a resultados</a>
