@@ -39,7 +39,7 @@ app.get('/contacto', (req, res) => {
   res.render('contacto');
 });
 
-// ================= SERVIDOR =================
+// server
 app.listen(3000, () => {
   console.log('Servidor corriendo en http://localhost:3000');
 });

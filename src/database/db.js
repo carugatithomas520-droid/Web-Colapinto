@@ -15,7 +15,7 @@ db.serialize(() => {
         equipo TEXT NOT NULL
     )`, (err) => {
         if (!err) {
-            // Insertamos a Franco por defecto si la tabla está limpia
+            //  franco aca
             db.run("INSERT INTO pilotos (nombre, equipo) SELECT 'Franco Colapinto', 'Williams' WHERE NOT EXISTS (SELECT 1 FROM pilotos)");
         }
     });
